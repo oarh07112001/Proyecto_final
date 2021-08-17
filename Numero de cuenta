@@ -1,0 +1,72 @@
+/ *
+Programa de gestión escolar que permite guardar registros de alumnos como
+nombre, dirección, número de cuenta, historial académico, etc.
+se podrán generar y asignar los números de inscripción.
+ * /
+paquete programa_gestionescolar;
+
+import java.util.Scanner;
+
+/ **
+ * @autor García Monjaraz Jessica Stephanie
+ * @autor Reyna Hernandez Omara Ajany
+ * @autor Santiago Castro Estefanny Montsserrat
+ * /
+public class Gen_NumCuenta {
+    maitines flotantes privados;
+    flotador privado matapro;
+    creditosem flotante privado;
+    flotador privado creditosAcumu;
+    flotador privado pro;
+    veloci de flotador privado;
+    flotador privado escolari;
+    privado int numcuenta;
+    
+    int numero_insc () {
+        
+         veloci = (creditosem / creditosAcumu) * 100;
+        
+            if (matins> 0) {
+                escolari = (matapro / matins) * 100;
+            }demás{
+                System.out.println ("Debes cumplir con un mínimo de 1 materia para poder obtener tu número de inscripción");
+            }
+                
+        numcuenta = (int) (pro * veloci * escolari);
+        return numcuenta;
+    
+}
+    
+     int llenado () {
+        // Creamos nuestro objeto de tipo escáner
+        Obtener el escáner = nuevo escáner (System.in); // obtiene entrada por teclado
+       
+       
+        System.out.println ("Por favor, ingrese su número de cuenta");
+        int nc = obtener.nextInt ();
+        System.out.println ("Por favor, Ingrese el número de materias que inscribio este semestre:");
+        matins = obtener.nextFloat ();
+        System.out.println ("Por favor Ingrese el número de materias que aprobo de este semestre:");
+        matapro = obtener.nextFloat ();
+        System.out.println ("Por favor, Ingrese su promedio general:");
+        pro = obtener.nextFloat ();
+        System.out.println ("Por favor, Ingrese los créditos acumulados segun el semestre que cursa actualmente");
+        creditosem = obtener.nextFloat ();
+       System.out.println ("*** A continuación se muestra una lista de créditos que deberia acumular segun el semestre que cursa:");
+       System.out.println ("\ tSemestre 1: 46 \ n \ tSemestre 2: 86 \ n \ tSemestre 3: 130 \ n \ tSemestre 4: 172 \ n \ tSemestre 5: 220 \ n \ tSemestre 6: 268 \ n \ tSemestre 7: 316 \ n \ tSemestre 8: 362 \ n \ tSemestre 9: 406 \ n \ t2Semestre 10: 440 ");
+       System.out.println ("Ingrese los créditos acumulados segun el semestre que cursa actualmente");
+       creditosAcumu = obtener.nextInt ();
+       System.out.println ("Para el / la alumn @ con numero de cuenta:" + nc + "\ n" + "tu numero de inscripcion es:");
+        
+        return 0;
+     }
+      // Funcion para ver el numero de inscripcion
+    anular datos () {
+       
+               
+        System.out.println (numero_insc ());
+    
+
+    
+}
+}
