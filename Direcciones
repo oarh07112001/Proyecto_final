@@ -1,0 +1,31 @@
+paquete programa_gestionescolar;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+/ **
+ * @autor García Monjaraz Jessica Stephanie
+ * @autor Reyna Hernandez Omara Ajany
+ * @autor Santiago Castro Estefanny Montsserrat
+ * /
+public class Direcciones_txt {
+    public String leerTxt (String direccion) {// direccion del archivo
+        String direc = "";
+        intentar{
+            BufferedReader bf = new BufferedReader (nuevo FileReader (direccion));
+            String textemp = "";
+            String bfRead;
+            while ((bfRead = bf.readLine ())! = null) {
+                // haz el ciclo, mientras bfRead tiene datos
+                textemp = textemp + "\ n" + bfRead; // guardado el texto del archivo
+            }
+            direc = textemp;
+            
+        } captura (IOException e) {
+            System.err.println ("No se encontro el archivo");
+        }
+        return direc;
+}
+    
+}
