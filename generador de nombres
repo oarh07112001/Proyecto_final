@@ -1,0 +1,52 @@
+/ *
+ Esta clase genera nombres y los une aleatoriamente, a partir de las diversas opciones que contiene una cadena creada previamente
+Se implementara en el tratamiento de colecciones -> CRUD
+ * /
+paquete programa_gestionescolar;
+
+import java.util.Random;
+
+/ *
+* @autor García Monjaraz Jessica Stephanie
+ * @autor Reyna Hernandez Omara Ajany
+ * @autor Santiago Castro Estefanny Montsserrat
+* /
+public class Modulo_GenNombres {
+    Cadena estática pública [] NombresAlea (int cantidad) {
+    
+    int y = 1;
+    Cadena [] nombresAleatorios = nueva Cadena [cantidad];
+
+    String [] nom = {"Andrea", "David", "Bruno", "Brenda", "Francisco", "Dylan", "Mariana", "Alejandro", "Roberto", "Fernando", "Carlos", "Daniela", "Jorge", "Ricardo", "Margarita", "Antonio", "Carla", "Verónica", "Leticia", "Josefina", "Emiliano", "Adrián", "Alberto", "Alan "," Gabriel "," Uriel "," Viridiana "," Hugo "," Alicia "," Susana "};
+    String [] ap1 = {"Juárez", "Ramos", "Cárdenas", "Domínguez", "Herrera", "Medina", "Castro", "Vargas", "Guzmán", "Velázquez", "Rojas", "de la Cruz", "Contreras", "Salazar", "Luna", "Ortega", "Santiago", "Guerrero", "Estrada", "Bautista", "Cortes", "Soto", "Alvarado", "Espinoza", "Lara", "Ávila", "Ríos", "Cervantes", "Silva", "León"};
+    String [] ap2 = {"Hernandez", "Garcia", "Martinez", "Lopez", "Gonzales", "Perez", "Rodriguez", "Sanchez", "Ramirez", "Cruz", "Flores", "Gómez", "Morales", "Vázquez", "Reyes", "Jiménez", "Torres", "Díaz", "Gutierres", "Ruiz", "Mendoza", "Aguilar", "Ortiz", "Moreno "," Castillo "," Romero "," Alvarez "," Méndez "," Chávez "," Rivera "};
+
+    
+    para (int n = 0; n <cantidad; n ++) {
+	nombresAleatorios [n] = "Nombre del alumno" + y + ":" + nom [(int) (Math.floor (Math.random () * ((longitud nom. - 1) - 0 + 1) + 0)) ] + "" + ap1 [(int) (Math.floor (Math.random () * ((ap1.length - 1) - 0 + 1) + 0))] + "" + ap2 [(int) (Math .floor (Math.random () * ((ap2.length - 1) - 0 + 1) + 0))];
+        y = y + 1;	
+    }
+	return nombresAleatorios;
+        
+}
+
+
+public static void imprimir (String [] nomAleatorios) {
+    int min_val = 18;
+    int max_val = 27;
+    int y = 1;
+    para (int n = 0; n <nomAleatorios.length; n ++) {
+    System.out.println (nomAleatorios [n]);}
+   
+Direcciones_txt a = nuevas Direcciones_txt ();
+   System.out.println (a.leerTxt ("C: \\\\\\\\\\\\\\\\ Usuarios \\\\\\\\\\\\\\\ Bienvenido \\\ \\\\\\\\\\\\\ OneDrive \\\\\\\\\\\\\\\\ Documentos \\\\\\\\\\\\\\\ NetBeansProjects \\ \\\\\\\\\\\\\\ txt \\\\\\\\\\\\\\\\ direcciones.txt ")); // DIRECCIONES
+   
+   Rand aleatorio = nuevo Random ();
+        para (int n = 1; n <= 100; n ++) {
+        int numRandom = min_val + rand.nextInt ((max_val - min_val) + 1);
+        System.out.println ("\ n" + "Edad del alumno" + y + ":" + numRandom);
+            y = y + 1;
+}	
+   
+}
+}	
