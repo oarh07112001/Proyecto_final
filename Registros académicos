@@ -1,0 +1,81 @@
+paquete programa_gestionescolar;
+/ **
+ * @autor García Monjaraz Jessica Stephanie
+ * @autor Reyna Hernandez Omara Ajany
+ * @autor Santiago Castro Estefanny Montsserrat
+ * /
+public class Registros_Academicos {
+     public String numcuenta;
+     public String sem;
+     public String pro;
+     public String numInscripcion; // NUMERO DE MATERIAS INSCRITAS
+     public String credAlumnos; // CREDITOS QUE LLEVA EL ALUMNO EN ESTE SEMESTRE
+     public String credIngreso; // CREDITOS QUE DEBERIA LLEVAR SEGUN TODOS LOS SEMESTRES CURSADOS HASTA EL ACTUAL
+     public String matAprobadas;
+     public String matInscritas;
+
+    public String getNumcuenta () {
+        return numcuenta;
+    }
+
+    public void setNumcuenta (String numcuenta) {
+        this.numcuenta = numcuenta;
+    }
+
+    public String getSem () {
+        return sem;
+    }
+
+    public void setSem (String sem) {
+        this.sem = sem;
+    }
+
+    public String getPro () {
+        return pro;
+    }
+
+    public void setPro (String pro) {
+        this.pro = pro;
+    }
+
+    public String getNumInscripcion () {
+        return numInscripcion;
+    }
+
+    public void setNumInscripcion (String numInscripcion) {
+        this.numInscripcion = numInscripcion;
+    }
+
+    public String getCredAlumnos () {
+        return credAlumnos;
+    }
+
+    public void setCredAlumnos (String credAlumnos) {
+        this.credAlumnos = credAlumnos;
+    }
+
+    public String getCredIngreso () {
+        return credIngreso;
+    }
+
+    public void setCredIngreso (String credIngreso) {
+        this.credIngreso = credIngreso;
+    }
+
+    public String getMatAprobadas () {
+        return matAprobadas;
+    }
+
+    public void setMatAprobadas (String matAprobadas) {
+        this.matAprobadas = matAprobadas;
+    }
+
+    public String getMatInscritas () {
+        return matInscritas;
+    }
+
+    public void setMatInscritas (String matInscritas) {
+        this.matInscritas = matInscritas;
+    }
+
+}
