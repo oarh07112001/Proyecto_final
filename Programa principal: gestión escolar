@@ -1,0 +1,194 @@
+/ *
+---- MODELOS DE PROGRAMACIÓN ORIENTADA A OBJETOS ----
+Programa de gestión escolar que mendiante un menú permite guardar registros de alumnos 
+como numero de cuenta e historial académico. También cuenta con una sección donde
+se pueden visualizar todos los alumnos registrados. Además, la gestión escolar tiene la
+oportunidad de modificar los datos de registro a excepción del número de inscripción.
+En cuanto al módulo de datos personales, se puede ver el nombre, dirección y edad de 100 alumnos (estos
+generados aleatoriamente). 
+ * /
+paquete programa_gestionescolar;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+importar estático programa_gestionescolar.Modulo_GenNombres.NombresAlea;
+importar estático programa_gestionescolar.Modulo_GenNombres.imprimir;
+
+/ **
+ *
+ * @autor García Monjaraz Jessica Stephanie
+ * @autor Reyna Hernandez Omara Ajany
+ * @autor Santiago Castro Estefanny Montsserrat
+ * /
+public class Programa_GestionEscolar {
+
+    public static void main (String [] args) lanza IOException {
+        int opc; 
+	Escaneo del escáner = nuevo escáner (System.in); 
+        ArrayList <Registros_Academicos> listaRegistroAcademico = new ArrayList <> ();
+
+	System.out.println ("\ n :::::::: GESTIÓN ESCOLAR ::::::::");
+	hacer{
+            System.out.println ("\ n =================================");
+            System.out.println ("\ t Menú");
+            System.out.println ("=================================");
+            System.out.println ("1. Ver datos personales de alumnos inscritos");
+            System.out.println ("2. Crear registro de alumnos");
+            System.out.println ("3. Ver lista de alumnos registrados");
+            System.out.println ("4. Eliminar registros");
+            System.out.println ("5. Modificar registros");
+            System.out.println ("6. Generador de números de inscripción");
+            System.out.println ("7. Salir");
+            System.out.println ("---> Seleccione una opción:");
+            opc = scan.nextInt (); 
+
+            cambiar (opc) {	
+            caso 1: 
+                System.out.println ("---------------------------------------");
+                System.out.println ("\ t1) DATOS PERSONALES DE ALUMNOS:");
+                imprimir (NombresAlea (100)); 
+            pausa;                
+                
+            caso 2: 
+                System.out.println ("---------------------------------------");
+                System.out.println ("\ t2) CREAR REGISTRO DE ALUMNOS:");
+                Registros_Academicos registro = new Registros_Academicos ();
+                    
+                System.out.println ("\ n" + "Ingrese el número de cuenta del alumno:");
+                scan.nextLine (); 
+                registro.setNumcuenta (scan.nextLine ());
+
+                System.out.println ("Ingrese el semestre que cursa:");
+                registro.setSem (scan.nextLine ());                  
+
+                System.out.println ("Ingrese el número de materias inscritas:");
+                registro.setMatInscritas (scan.nextLine ());
+                        
+                System.out.println ("Ingrese el número de materias aprobadas:");
+                registro.setMatAprobadas (scan.nextLine ());
+                        
+                System.out.println ("Ingrese su promedio:");
+                registro.setPro (scan.nextLine ());      
+                
+                System.out.println ("*** A continuación se muestra una lista de créditos que deberia acumular segun el semestre que cursa:");
+                System.out.println ("\ tSemestre 1: 46 \ n \ tSemestre 2: 86 \ n \ tSemestre 3: 130 \ n \ tSemestre 4: 172 \ n \ tSemestre 5: 220 \ n \ tSemestre 6: 268 \ n \ tSemestre 7: 316 \ n \ tSemestre 8: 362 \ n \ tSemestre 9: 406 \ n \ t2Semestre 10: 440 ");
+                    
+                System.out.println ("De acuerdo a los datos anteriores, ingrese el total de créditos con los que debería cumplir desde su ingreso:");
+                registro.setCredIngreso (scan.nextLine ());
+                                            
+                System.out.println ("Ingrese sus créditos actuales:");
+                registro.setCredAlumnos (scan.nextLine ());
+ 
+                listaRegistroAcademico.add (registro);            
+                System.out.println ("¡Alumn @ registrado exitosamente!");
+            pausa;                
+                
+            caso 3: 
+                System.out.println ("---------------------------------------");
+                System.out.println ("\ t3) LISTA DE REGISTROS:");
+                
+                
+                para (int i = 0; i <listaRegistroAcademico.size (); i ++) {   
+                    System.out.println ("\ n" + "----> Registro del alumno" + (i + 1) + "\ n");
+                    Registros_Academicos listaDatos = listaRegistroAcademico.get (i);
+                            
+                    System.out.println ("Numero de cuenta:" + listaDatos.getNumcuenta ()); 
+                    System.out.println ("Semestre:" + listaDatos.getSem ());
+                    System.out.println ("Numero de materias inscritas:" + listaDatos.getMatInscritas ()); 
+                    System.out.println ("Numero de materias aprobadas:" + listaDatos.getMatAprobadas ()); 
+                    System.out.println ("Promedio:" + listaDatos.getPro ()); 
+                    System.out.println ("Créditos actuales:" + listaDatos.getCredAlumnos ()); 
+                    System.out.println ("Créditos por semestre:" + listaDatos.getCredIngreso ());
+                }
+               
+            pausa;
+                
+            caso 4: 
+                System.out.println ("---------------------------------------");
+                System.out.println ("\ t4) REGISTROS ELIMINARES:");
+                System.out.println ("\ n" + "\ n" + "Ingrese el número de cuenta de la persona a la cual se elimina el registro:");
+                scan.nextLine (); 
+                String NumCuenta = scan.nextLine ();
+                        
+                para (int i = 0; i <listaRegistroAcademico.size (); i ++) {
+                    Registros_Academicos listaDatos = listaRegistroAcademico.get (i);
+                    
+                    if (NumCuenta.equals (listaDatos.getNumcuenta ())) {
+                        listaRegistroAcademico.remove (i);
+                        System.out.println ("** El ALUMNO FUE DADO DE BAJA EXITOSAMENTE **" + "\ n");
+                    }demás{
+                        System.out.println ("\ n" + "No hay registros en la lista" + "\ n");
+                        System.out.println ("");
+                        }
+                }                
+                
+                pausa;
+
+            caso 5: 
+                System.out.println ("---------------------------------------");
+                System.out.println ("\ t5) REGISTROS MODIFICAR:");    
+                System.out.println ("Ingrese el número de cuenta del registro a modificar:");
+                scan.nextLine (); 
+                NumCuenta = scan.nextLine ();
+                System.out.println ("\ n" + "** REGISTRO ACTUAL DEL ALUMN @: **");
+                para (int i = 0; i <listaRegistroAcademico.size (); i ++) {
+                    Registros_Academicos listaDatos = listaRegistroAcademico.get (i);
+                    if (NumCuenta.equals (listaDatos.getNumcuenta ())) {
+                        System.out.println ("Numero de cuenta:" + listaDatos.getNumcuenta ());
+                        System.out.println ("Numero de materias inscritas:" + listaDatos.getMatInscritas ());
+                        System.out.println ("Numero de materias aprobadas:" + listaDatos.getMatAprobadas ());
+                        System.out.println ("Promedio:" + listaDatos.getPro ());
+                        System.out.println ("Créditos actuales:" + listaDatos.getCredAlumnos ());
+                        System.out.println ("Créditos por semestre:" + listaDatos.getCredIngreso ());
+                        System.out.println ("\ n ** MODIFICACIÓN DE DATOS **");
+                             
+                        System.out.println ("Ingrese nuevo número de cuenta:");
+                        String numCuenta = scan.nextLine ();
+                        System.out.println ("Ingrese nuevo número de materias inscritas:");
+                        String numIns = scan.nextLine ();
+                        System.out.println ("Ingrese nuevo número de materias aprobadas:");
+                        String numApro = scan.nextLine ();
+                        System.out.println ("Ingrese nuevo promedio:");
+                        Cadena promedio = scan.nextLine ();
+                        System.out.println ("Ingrese nuevos créditos actuales:");
+                        String creAlu = scan.nextLine ();
+                        System.out.println ("Ingrese nuevos créditos por semestre:");
+                        String creIns = scan.nextLine ();
+                                 
+                        listaDatos.setNumcuenta (numCuenta);
+                        listaDatos.setMatInscritas (numIns);
+                        listaDatos.setMatAprobadas (numApro);
+                        listaDatos.setPro (promedio);
+                        listaDatos.setCredAlumnos (creAlu);
+                        listaDatos.setCredIngreso (creIns);
+                    }
+                }
+                System.out.println ("** EL REGISTRO FUE MODIFICADO EXITOSAMENTE **");
+            pausa;
+                    
+            caso 6: 
+                System.out.println ("---------------------------------------");
+                System.out.println ("\ t6) NÚMEROS DE INSCRIPCIÓN:");
+                
+            // System.out.println ("Por favor, ingrese su numero de cuenta");
+              // int nuCuen = scan.nextInt ();
+               
+               Gen_NumCuenta numI = nuevo Gen_NumCuenta ();
+            
+                numI.llenado ();
+                numI.datos ();
+            pausa;
+
+            caso 7:
+                System.out.println ("Ha elegido salir del programa");
+            pausa;
+     
+            defecto: 
+                System.out.println ("¡Opción no válida!");	
+            }
+
+	} mientras (opc! = 7);
+    }
+    
+}
